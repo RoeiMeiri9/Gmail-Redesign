@@ -72,7 +72,8 @@ span[role="button"]:hover {
 tr.zA[role="row"]:hover {
   box-shadow: none;
   border-bottom: inherit;
-  background: rgba(0, 0, 0, 0.125);
+
+  background: color-mix(in srgb, currentColor 15%, rgb(255, 255, 255) 0%);
 }
 
 ::-webkit-scrollbar {
