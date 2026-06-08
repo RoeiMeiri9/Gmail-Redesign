@@ -12,9 +12,7 @@
     inset 0 1px 0px rgba(255, 255, 255, 0.05),
     inset 0 2px 4px rgba(255, 255, 255, 0.05);
 
-  --highlight-white:
-    inset 0 0 12px rgba(255, 255, 255, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  --highlight-white: inset 0 0 100px rgba(255, 255, 255, 0.2);
 }
 
 /* Main */
@@ -32,7 +30,7 @@ div[aria-live]
 
   outline: 1px solid rgba(255, 255, 255, 0.06);
   outline-offset: -1px;
-  box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.05);
+  box-shadow: var(--highlight-white);
 }
 
 [role="menu"] {
@@ -71,6 +69,12 @@ span[role="button"]:hover {
   box-shadow: var(--highlight-weak);
 }
 
+tr.zA[role="row"]:hover {
+  box-shadow: none;
+  border-bottom: inherit;
+  background: rgba(0, 0, 0, 0.125);
+}
+
 ::-webkit-scrollbar {
   width: 10px !important;
   height: 10px !important;
@@ -87,11 +91,6 @@ span[role="button"]:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-image: var(--noise);
-  background-blend-mode: overlay;
-  background-repeat: repeat;
-  backdrop-filter: blur(10px) saturate(1.5);
-
   border: 0px solid transparent;
   border-width: 2px !important;
 
