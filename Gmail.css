@@ -15,7 +15,7 @@
   --highlight-white: inset 0 0 100px rgba(255, 255, 255, 0.15);
 }
 
-/* Main */
+/* Main Content Area */
 div[aria-live]
   + div
   > div:last-child
@@ -33,6 +33,7 @@ div[aria-live]
   box-shadow: var(--highlight-white);
 }
 
+/* Quick Settings Menus */
 [role="menu"] {
   background-image: var(--noise);
   background-blend-mode: overlay;
@@ -42,6 +43,7 @@ div[aria-live]
   box-shadow: var(--highlight-white);
 }
 
+/* Search Bar */
 form[role="search"] {
   background-image: var(--noise);
   background-blend-mode: overlay;
@@ -51,7 +53,7 @@ form[role="search"] {
   box-shadow: var(--highlight-strong);
 }
 
-/* Right nav */
+/* Left/Right Navigation Buttons & Icons */
 div[data-tooltip][data-tooltip-align="r"][class*=" "]:hover,
 div[data-tooltip][data-tooltip-align="r"][class*=" "]:has(a[tabindex="0"]),
 span[role="button"]:focus,
@@ -69,6 +71,7 @@ span[role="button"]:hover {
   box-shadow: var(--highlight-weak);
 }
 
+/* Email Rows Hover Effect */
 tr.zA[role="row"]:hover {
   box-shadow: none;
   border-bottom: inherit;
@@ -76,6 +79,7 @@ tr.zA[role="row"]:hover {
   background: color-mix(in srgb, currentColor 15%, rgb(255, 255, 255) 0%);
 }
 
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 10px !important;
   height: 10px !important;
