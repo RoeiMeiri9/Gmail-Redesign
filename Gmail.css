@@ -54,8 +54,8 @@ form[role="search"] {
 }
 
 /* Left/Right Navigation Buttons & Icons */
-div[data-tooltip][class*=" "]:hover,
-div[data-tooltip][class*=" "]:has(a[tabindex="0"]),
+div[data-tooltip][data-tooltip-align][class*=" "]:hover,
+div[data-tooltip][data-tooltip-align][class*=" "]:has(a[tabindex="0"]),
 span[role="button"]:focus,
 span[role="button"]:hover {
   background-image: var(--noise);
@@ -66,7 +66,7 @@ span[role="button"]:hover {
   box-shadow: var(--highlight-strong);
 }
 
-div[data-tooltip][class*=" "]:hover,
+div[data-tooltip][data-tooltip-align][class*=" "]:hover,
 span[role="button"]:hover {
   box-shadow: var(--highlight-weak);
 }
