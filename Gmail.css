@@ -6,7 +6,7 @@
   }
 
   /* Main */
-  /* div:has(> [role="main"]), */
+  /* Main part, might be changed over time */
   div:has(> [class="AO"]) {
     background-image: var(--noise);
     background-blend-mode: overlay;
