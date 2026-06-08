@@ -8,13 +8,22 @@
 div:has(> [class="AO"]) {
   background-image: var(--noise);
   background-blend-mode: overlay;
-  backdrop-filter: blur(50px) saturate(1.75);
+  background-repeat: repeat;
+  backdrop-filter: blur(60px) saturate(1.75);
 }
 
 [role="menu"] {
   background-image: var(--noise);
   background-blend-mode: overlay;
+  background-repeat: repeat;
   backdrop-filter: blur(25px) saturate(2.5);
+}
+
+form[role="search"] {
+  background-image: var(--noise);
+  background-blend-mode: overlay;
+  background-repeat: repeat;
+  backdrop-filter: blur(10px) saturate(1.25);
 }
 
 /* Right nav */
@@ -24,6 +33,6 @@ div:has(> span[role="button"]:focus),
 div:has(> span[role="button"]:hover) {
   background-image: var(--noise);
   background-blend-mode: overlay;
-
+  background-repeat: repeat;
   backdrop-filter: blur(10px) saturate(1.5);
 }
