@@ -1,138 +1,153 @@
-/* Adding blur-behind to Gmail*/
-:root {
-  --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='5' result='t'/%3E%3CfeSpecularLighting surfaceScale='0.5' specularConstant='6' specularExponent='30' in='t' result='s'%3E%3CfeDistantLight azimuth='20' elevation='132'/%3E%3C/feSpecularLighting%3E%3CfeGaussianBlur stdDeviation='0.4' in='s'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+/* ==UserStyle==
+@name           Modernize Gmail
+@namespace      github.com/RoeiMeiri9/Gmail-Redesign.git
+@version        1.0.0
+@description    A premium Windows 11-inspired Acrylic & Mica UI for Gmail.
+@author         Roei Meiri
+@license        No License
 
-  --highlight-strong:
-    inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
-    inset 0 1px 0px oklab(100% 0 -0.00011 / 0.15),
-    inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
+@updateURL https://raw.githubusercontent.com/RoeiMeiri9/Gmail-Redesign/refs/heads/main/Gmail.css
+@downloadURL https://raw.githubusercontent.com/RoeiMeiri9/Gmail-Redesign/refs/heads/main/Gmail.css
+==/UserStyle== */
 
-  --highlight-weak:
-    inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
-    inset 0 1px 0px oklab(100% 0 -0.00011 / 0.05),
-    inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
+@-moz-document url-prefix("https://mail.google.com/mail/")
+{
+  /* Adding blur-behind to Gmail*/
+  :root {
+    --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='5' result='t'/%3E%3CfeSpecularLighting surfaceScale='0.5' specularConstant='6' specularExponent='30' in='t' result='s'%3E%3CfeDistantLight azimuth='20' elevation='132'/%3E%3C/feSpecularLighting%3E%3CfeGaussianBlur stdDeviation='0.4' in='s'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
 
-  --highlight-white:
-    inset 0 0 100px oklab(100% 0 -0.00011 / 0.02),
-    inset 0 1px 0px oklab(100% 0 -0.00011 / 0.02),
-    inset 0 3px 8px oklab(100% 0 -0.00011 / 0.02);
-}
+    --highlight-strong:
+      inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
+      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.15),
+      inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
 
-/* Main Content Area */
-div[aria-live]
-  + div
-  > div:last-child
-  > div
-  > div:last-child
-  > div:nth-child(2)
-  > div {
-  backdrop-filter: blur(60px) saturate(1.75);
-  outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
-  outline-offset: -1px;
-  box-shadow: var(--highlight-white);
-  & > div {
+    --highlight-weak:
+      inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
+      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.05),
+      inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
+
+    --highlight-white:
+      inset 0 0 100px oklab(100% 0 -0.00011 / 0.02),
+      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.02),
+      inset 0 3px 8px oklab(100% 0 -0.00011 / 0.02);
+  }
+
+  /* Main Content Area */
+  div[aria-live]
+    + div
+    > div:last-child
+    > div
+    > div:last-child
+    > div:nth-child(2)
+    > div {
+    backdrop-filter: blur(60px) saturate(1.75);
+    outline: 1px solid oklab(100% 0 -0.00011 / 0.03);
+    outline-offset: -1px;
+    box-shadow: var(--highlight-white);
+    & > div {
+      background-image: var(--noise);
+      background-blend-mode: overlay;
+      background-repeat: repeat;
+    }
+  }
+
+  div[role="button"]:hover:after,
+  div[role="button"]:hover div:after {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 11px;
+  }
+
+  /* Quick Settings Menus */
+  [role="menu"] {
     background-image: var(--noise);
     background-blend-mode: overlay;
     background-repeat: repeat;
+    backdrop-filter: blur(25px) saturate(2.5);
+
+    box-shadow: var(--highlight-white);
   }
-}
 
-div[role="button"]:hover:after,
-div[role="button"]:hover div:after {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 11px;
-}
+  /* Search Bar */
+  form[role="search"] {
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    backdrop-filter: blur(10px) saturate(1.25);
 
-/* Quick Settings Menus */
-[role="menu"] {
-  background-image: var(--noise);
-  background-blend-mode: overlay;
-  background-repeat: repeat;
-  backdrop-filter: blur(25px) saturate(2.5);
+    box-shadow: var(--highlight-strong);
+  }
 
-  box-shadow: var(--highlight-white);
-}
+  /* Left/Right Navigation Buttons & Icons */
+  div[data-tooltip][data-tooltip-align][class*=" "]:hover,
+  div[data-tooltip][data-tooltip-align][class*=" "]:has(a[tabindex="0"]),
+  span[role="button"]:focus,
+  span[role="button"]:hover {
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    backdrop-filter: blur(10px) saturate(1.5);
 
-/* Search Bar */
-form[role="search"] {
-  background-image: var(--noise);
-  background-blend-mode: overlay;
-  background-repeat: repeat;
-  backdrop-filter: blur(10px) saturate(1.25);
+    box-shadow: var(--highlight-strong);
+  }
 
-  box-shadow: var(--highlight-strong);
-}
+  div[data-tooltip][data-tooltip-align][class*=" "]:hover,
+  span[role="button"]:hover {
+    box-shadow: var(--highlight-weak);
+  }
 
-/* Left/Right Navigation Buttons & Icons */
-div[data-tooltip][data-tooltip-align][class*=" "]:hover,
-div[data-tooltip][data-tooltip-align][class*=" "]:has(a[tabindex="0"]),
-span[role="button"]:focus,
-span[role="button"]:hover {
-  background-image: var(--noise);
-  background-blend-mode: overlay;
-  background-repeat: repeat;
-  backdrop-filter: blur(10px) saturate(1.5);
+  /* Email Rows Hover Effect */
+  tr.zA[role="row"]:hover {
+    box-shadow: none;
+    border-bottom: inherit;
 
-  box-shadow: var(--highlight-strong);
-}
+    background: oklab(100% 0 -0.00011 / 0.1);
+  }
 
-div[data-tooltip][data-tooltip-align][class*=" "]:hover,
-span[role="button"]:hover {
-  box-shadow: var(--highlight-weak);
-}
+  tr[role="row"]:has(td[role="gridcell"]:nth-last-child(3) span[class]):hover {
+    background: oklab(100% 0 -0.00011 / 0.13);
+  }
 
-/* Email Rows Hover Effect */
-tr.zA[role="row"]:hover {
-  box-shadow: none;
-  border-bottom: inherit;
+  /* New Email */
+  div[role="navigation"] > div > div > div[role="button"] {
+    background: oklab(100% 0 -0.00011 / 0.8);
+    background-image: var(--noise);
+    background-blend-mode: overlay;
+    background-repeat: repeat;
+    backdrop-filter: blur(20px) saturate(2.8) brightness(2.8);
 
-  background: oklab(100% 0 -0.00011 / 0.1);
-}
+    box-shadow:
+      inset 0 0 12px oklab(100% 0 -0.00011 / 0.4),
+      inset 0 1px 0px oklab(100% 0 -0.00011 / 0.5),
+      inset 0 2px 4px oklab(100% 0 -0.00011 / 0.2);
+  }
 
-tr[role="row"]:has(td[role="gridcell"]:nth-last-child(3) span[class]):hover {
-  background: oklab(100% 0 -0.00011 / 0.13);
-}
+  /* Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
 
-/* New Email */
-div[role="navigation"] > div > div > div[role="button"] {
-  background: oklab(100% 0 -0.00011 / 0.8);
-  background-image: var(--noise);
-  background-blend-mode: overlay;
-  background-repeat: repeat;
-  backdrop-filter: blur(20px) saturate(2.8) brightness(2.8);
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track:hover,
+  ::-webkit-scrollbar-track:active {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+  }
 
-  box-shadow:
-    inset 0 0 12px oklab(100% 0 -0.00011 / 0.4),
-    inset 0 1px 0px oklab(100% 0 -0.00011 / 0.5),
-    inset 0 2px 4px oklab(100% 0 -0.00011 / 0.2);
-}
+  ::-webkit-scrollbar-thumb {
+    border: 0px solid transparent;
+    border-width: 2px !important;
 
-/* Custom Scrollbars */
-::-webkit-scrollbar {
-  width: 10px !important;
-  height: 10px !important;
-}
+    border-radius: 100px;
+    box-shadow: none !important;
+  }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-track:hover,
-::-webkit-scrollbar-track:active {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-}
-
-::-webkit-scrollbar-thumb {
-  border: 0px solid transparent;
-  border-width: 2px !important;
-
-  border-radius: 100px;
-  box-shadow: none !important;
-}
-
-::-webkit-scrollbar-thumb:hover,
-::-webkit-scrollbar-thumb:active {
-  box-shadow: none !important;
-  background-color: oklab(100% 0 -0.00011 / 0.55) !important;
+  ::-webkit-scrollbar-thumb:hover,
+  ::-webkit-scrollbar-thumb:active {
+    box-shadow: none !important;
+    background-color: oklab(100% 0 -0.00011 / 0.55) !important;
+  }
 }
