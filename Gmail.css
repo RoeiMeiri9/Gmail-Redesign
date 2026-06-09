@@ -3,16 +3,16 @@
   --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='5' result='t'/%3E%3CfeSpecularLighting surfaceScale='0.5' specularConstant='6' specularExponent='30' in='t' result='s'%3E%3CfeDistantLight azimuth='20' elevation='132'/%3E%3C/feSpecularLighting%3E%3CfeGaussianBlur stdDeviation='0.4' in='s'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
 
   --highlight-strong:
-    inset 0 0 12px rgba(255, 255, 255, 0.05),
-    inset 0 1px 0px rgba(255, 255, 255, 0.15),
-    inset 0 2px 4px rgba(255, 255, 255, 0.05);
+    inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
+    inset 0 1px 0px oklab(100% 0 -0.00011 / 0.15),
+    inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
 
   --highlight-weak:
-    inset 0 0 12px rgba(255, 255, 255, 0.05),
-    inset 0 1px 0px rgba(255, 255, 255, 0.05),
-    inset 0 2px 4px rgba(255, 255, 255, 0.05);
+    inset 0 0 12px oklab(100% 0 -0.00011 / 0.05),
+    inset 0 1px 0px oklab(100% 0 -0.00011 / 0.05),
+    inset 0 2px 4px oklab(100% 0 -0.00011 / 0.05);
 
-  --highlight-white: inset 0 0 100px rgba(255, 255, 255, 0.08);
+  --highlight-white: inset 0 0 100px oklab(100% 0 -0.00011 / 0.02);
 }
 
 /* Main Content Area */
@@ -24,7 +24,7 @@ div[aria-live]
   > div:nth-child(2)
   > div {
   backdrop-filter: blur(60px) saturate(1.75);
-  outline: 1px solid rgba(255, 255, 255, 0.06);
+  outline: 1px solid oklab(100% 0 -0.00011 / 0.06);
   outline-offset: -1px;
   box-shadow: var(--highlight-white);
   & > div {
@@ -77,11 +77,11 @@ tr.zA[role="row"]:hover {
   box-shadow: none;
   border-bottom: inherit;
 
-  background: rgba(255, 255, 255, 0.1);
+  background: oklab(100% 0 -0.00011 / 0.1);
 }
 
 tr[role="row"]:has(td[role="gridcell"]:nth-last-child(3) span[class]):hover {
-  background: rgba(255, 255, 255, 0.125);
+  background: oklab(100% 0 -0.00011 / 0.13);
 }
 
 /* Custom Scrollbars */
@@ -111,5 +111,5 @@ tr[role="row"]:has(td[role="gridcell"]:nth-last-child(3) span[class]):hover {
 ::-webkit-scrollbar-thumb:hover,
 ::-webkit-scrollbar-thumb:active {
   box-shadow: none !important;
-  background-color: rgba(255, 255, 255, 0.55) !important;
+  background-color: oklab(100% 0 -0.00011 / 0.55) !important;
 }
