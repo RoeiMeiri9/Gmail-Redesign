@@ -11,7 +11,7 @@ A premium Fluent Design overhaul for Gmail, with deep blur-behind effects, and m
 - **Physical Micro-Texture:** Implements a subtle SVG fractal noise overlay to eliminate digital banding and mimic physical hardware glass.
 - **Overhauled Interface:** Redesigned search bar, custom scrollbars, row hovers, floating quick settings, and navigation buttons.
 
-## 🚀 Installation Instructions
+## Installation Instructions
 
 ### Step 1: Install a Usercss Manager
 
