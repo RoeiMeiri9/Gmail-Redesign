@@ -1,12 +1,11 @@
 /* ==UserStyle==
 @name           Modernize Gmail
 @namespace      github.com/RoeiMeiri9/Gmail-Redesign.git
-@version        1.0.1
+@version        1.0.2
 @description    A premium Windows 11-inspired Acrylic & Mica UI for Gmail.
 @author         Roei Meiri
 @license        No License
 ==/UserStyle== */
-
 @-moz-document url-prefix("https://mail.google.com/mail/")
 {
   /* Adding blur-behind to Gmail*/
@@ -48,14 +47,70 @@
     }
   }
 
-  div[role="button"]:hover:after,
-  div[role="button"]:hover div:after {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 11px;
+  form[role="search"] button:before,
+  header[role="banner"] a:before {
+    opacity: 1 !important;
+    background: transparent !important;
+    transition: none;
+  }
+
+  div[role="button"]:hover:before,
+  div[role="button"]:focus:before,
+  div[role="button"]:hover div:before,
+  div[role="button"]:focus div:before,
+  div[role="button"] div:hover:before,
+  div[role="button"] div:focus:before,
+  div[role="button"] div:hover span:before,
+  div[role="button"] div:focus span:before,
+  header[role="banner"] a[role="button"]:hover,
+  header[role="banner"] a[role="button"]:focus,
+  a[role="button"]:not([class="gb_C"]):hover:before,
+  a[role="button"]:not([class="gb_C"]):before,
+  button:not([class="OB"]):not(
+      header[role="banner"]
+        > div:nth-child(2)
+        > div:nth-child(2)
+        > div:nth-child(3)
+        *
+    ):hover:before,
+  button:not([class="OB"]):not(
+      header[role="banner"]
+        > div:nth-child(2)
+        > div:nth-child(2)
+        > div:nth-child(3)
+        *
+    ):focus:before,
+  form[role="search"] button:hover:before,
+  form[role="search"] button:focus:before,
+  div[role="button"] a:hover a:before,
+  div[role="button"] a:focus a:before {
+    background: oklab(100% 0 -0.00011 / 0.1) !important;
+    box-shadow: var(--highlight-weak) !important;
+    opacity: 1 !important;
+  }
+
+  button[class="OB"]:not(
+      header[role="banner"]
+        > div:nth-child(2)
+        > div:nth-child(2)
+        > div:nth-child(3)
+        *
+    ):hover:before,
+  button[class="OB"]:not(
+      header[role="banner"]
+        > div:nth-child(2)
+        > div:nth-child(2)
+        > div:nth-child(3)
+        *
+    ):focus:before {
+    background: oklab(24.794% 0.00012 -0.00587 / 0.06) !important;
+
+    outline: 1px solid oklab(0% 0 0 / 0.05);
+    mix-blend-mode: darken;
   }
 
   /* Quick Settings Menus */
-  [role="menu"] {
+  [role="menu"]:not(.J-M) {
     background-image: var(--noise);
     background-blend-mode: overlay;
     background-repeat: repeat;
@@ -75,8 +130,14 @@
   }
 
   /* Left/Right Navigation Buttons & Icons */
-  div[data-tooltip][data-tooltip-align][class*=" "]:hover,
-  div[data-tooltip][data-tooltip-align][class*=" "]:has(a[tabindex="0"]),
+  div[data-tooltip][data-tooltip-align][class*=" "]:not(
+      .aLF-aPX-awL-I,
+      .aLF-aPX-axp-I
+    ):hover,
+  div[data-tooltip][data-tooltip-align]:has(a[tabindex="0"]):not(
+      .aLF-aPX-awL-I,
+      .aLF-aPX-axp-I
+    ),
   span[role="button"]:focus,
   span[role="button"]:hover {
     background-image: var(--noise);
@@ -87,7 +148,10 @@
     box-shadow: var(--highlight-strong);
   }
 
-  div[data-tooltip][data-tooltip-align][class*=" "]:hover,
+  div[data-tooltip][data-tooltip-align][class*=" "]:not(
+      .aLF-aPX-awL-I,
+      .aLF-aPX-axp-I
+    ):hover,
   span[role="button"]:hover {
     box-shadow: var(--highlight-weak);
   }
