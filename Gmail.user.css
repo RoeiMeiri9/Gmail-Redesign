@@ -138,8 +138,8 @@
       .aLF-aPX-awL-I,
       .aLF-aPX-axp-I
     ),
-  span[role="button"]:focus,
-  span[role="button"]:hover {
+  span[role="button"]:not(td *):hover,
+  span[role="button"]:not(td *):focus {
     background-image: var(--noise);
     background-blend-mode: overlay;
     background-repeat: repeat;
@@ -152,7 +152,7 @@
       .aLF-aPX-awL-I,
       .aLF-aPX-axp-I
     ):hover,
-  span[role="button"]:hover {
+  span[role="button"]:not(td *):hover {
     box-shadow: var(--highlight-weak);
   }
 
