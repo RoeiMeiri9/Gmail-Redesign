@@ -54,8 +54,8 @@
     transition: none;
   }
 
-  div[role="button"]:hover:before,
-  div[role="button"]:focus:before,
+  div[role="button"]:not([class="T-I T-I-KE L3"]):hover:before,
+  div[role="button"]:not([class="T-I T-I-KE L3"]):focus:before,
   div[role="button"]:hover div:before,
   div[role="button"]:focus div:before,
   div[role="button"] div:hover:before,
