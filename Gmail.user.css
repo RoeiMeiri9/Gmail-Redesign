@@ -135,6 +135,7 @@
     box-shadow: var(--highlight-strong);
   }
 
+  /* Left/Right Navigation Buttons & Icons - unselected */
   div[data-tooltip][data-tooltip-align][class*=" "]:not(
       .aLF-aPX-awL-I,
       .aLF-aPX-axp-I
