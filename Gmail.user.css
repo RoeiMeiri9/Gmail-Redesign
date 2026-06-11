@@ -52,6 +52,8 @@
     opacity: 1 !important;
     background: transparent !important;
     transition: none;
+    backdrop-filter: none !important;
+      
   }
 
   div[role="button"]:not([class="T-I T-I-KE L3"]):hover:before,
@@ -87,8 +89,10 @@
     background: oklab(100% 0 -0.00011 / 0.1) !important;
     box-shadow: var(--highlight-weak) !important;
     opacity: 1 !important;
+      
+    backdrop-filter: blur(10px);
   }
-
+    
   button[class="OB"]:not(
       header[role="banner"]
         > div:nth-child(2)
