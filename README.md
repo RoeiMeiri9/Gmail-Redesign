@@ -16,7 +16,7 @@ A premium Fluent Design overhaul for Gmail, with deep blur-behind effects, and m
 
 To use this style, you need a browser extension that can inject custom CSS. **Stylus** is highly recommended:
 
-- [Stylus for Chrome / Edge / Opera](https://chrome.google.com/webstore/detail/stylus/clngjmcnelbghgmofhmboianpggoinkk)
+- [Stylus for Chrome / Edge / Opera](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
 - [Stylus for Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
 
 ### Step 2: Install the Theme
