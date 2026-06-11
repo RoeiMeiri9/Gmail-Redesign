@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Modernize Gmail
 @namespace      github.com/RoeiMeiri9/Gmail-Redesign.git
-@version        1.0.2
+@version        1.0.3
 @description    A premium Windows 11-inspired Acrylic & Mica UI for Gmail.
 @author         Roei Meiri
 @license        No License
@@ -47,15 +47,17 @@
     }
   }
 
+  /* Bubble Buttons */
+  /* Search and Gemini overrides */
   form[role="search"] button:before,
   header[role="banner"] a:before {
     opacity: 1 !important;
     background: transparent !important;
     transition: none;
     backdrop-filter: none !important;
-      
   }
 
+  /* Defining Bubble-Buttons */
   div[role="button"]:not([class="T-I T-I-KE L3"]):hover:before,
   div[role="button"]:not([class="T-I T-I-KE L3"]):focus:before,
   div[role="button"]:hover div:before,
@@ -89,28 +91,9 @@
     background: oklab(100% 0 -0.00011 / 0.1) !important;
     box-shadow: var(--highlight-weak) !important;
     opacity: 1 !important;
-      
-    backdrop-filter: blur(10px);
-  }
-    
-  button[class="OB"]:not(
-      header[role="banner"]
-        > div:nth-child(2)
-        > div:nth-child(2)
-        > div:nth-child(3)
-        *
-    ):hover:before,
-  button[class="OB"]:not(
-      header[role="banner"]
-        > div:nth-child(2)
-        > div:nth-child(2)
-        > div:nth-child(3)
-        *
-    ):focus:before {
-    background: oklab(24.794% 0.00012 -0.00587 / 0.06) !important;
 
-    outline: 1px solid oklab(0% 0 0 / 0.05);
-    mix-blend-mode: darken;
+    backdrop-filter: blur(10px);
+    mix-blend-mode: overlay;
   }
 
   /* Quick Settings Menus */
