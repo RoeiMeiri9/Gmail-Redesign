@@ -88,11 +88,13 @@
   form[role="search"] button:focus:before,
   div[role="button"] a:hover a:before,
   div[role="button"] a:focus a:before {
-    background: oklab(100% 0 -0.00011 / 0.1) !important;
+    background-color: oklab(100% 0 -0.00011 / 0.1) !important;
+    background-image: var(--noise) !important;
+    background-blend-mode: overlay;
     box-shadow: var(--highlight-weak) !important;
     opacity: 1 !important;
 
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) saturate(1.25);
   }
 
   div[role="button"]:not(header *):hover:before,
